@@ -44,27 +44,29 @@ ipython filename.py
 <img src="https://user-images.githubusercontent.com/26201632/39698074-e718c250-5210-11e8-8058-9a92c6d9e8e4.PNG" width="600">
 
 ### Working
+
 - Getting input image:
 
-<img src="https://user-images.githubusercontent.com/26201632/39697274-02a9c0da-520e-11e8-8a04-f58b32e9f70c.PNG" width="400">
-
+  <img src="https://user-images.githubusercontent.com/26201632/39697274-02a9c0da-520e-11e8-8a04-f58b32e9f70c.PNG" width="400">
+  
+  
 - Displaying input image:
 
-<img src="https://user-images.githubusercontent.com/26201632/39697297-18a12ed2-520e-11e8-9f4a-a1578c856f3a.PNG" width="400">
+  <img src="https://user-images.githubusercontent.com/26201632/39697297-18a12ed2-520e-11e8-9f4a-a1578c856f3a.PNG" width="400">
 
 - Rescaled Image(converting colored image to gray-scale and resizing to size of 28*28(EMNIST dataset size):
 
-<img src="https://user-images.githubusercontent.com/26201632/39697315-27bfccb6-520e-11e8-8a6a-97a044e23cf3.PNG" width="400">
+  <img src="https://user-images.githubusercontent.com/26201632/39697315-27bfccb6-520e-11e8-8a6a-97a044e23cf3.PNG" width="400">
 
 - Normalized Image:
 
-<img src="https://user-images.githubusercontent.com/26201632/39697416-80fc1a50-520e-11e8-8022-bce9057dfcde.PNG" width="400">
+  <img src="https://user-images.githubusercontent.com/26201632/39697416-80fc1a50-520e-11e8-8022-bce9057dfcde.PNG" width="400">
 
 - Predicted character:
 
-<img src="https://user-images.githubusercontent.com/26201632/39697439-90f7db88-520e-11e8-89f9-5d347340bc3e.PNG" width="400">
+  <img src="https://user-images.githubusercontent.com/26201632/39697439-90f7db88-520e-11e8-89f9-5d347340bc3e.PNG" width="400">
 
 - Copied to clipboard:
 
-<img src="https://user-images.githubusercontent.com/26201632/39697442-94ce67b8-520e-11e8-83a4-f7d6b2137b95.PNG" width="400">
+  <img src="https://user-images.githubusercontent.com/26201632/39697442-94ce67b8-520e-11e8-83a4-f7d6b2137b95.PNG" width="400">
 
