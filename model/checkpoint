@@ -1,0 +1,2 @@
+model_checkpoint_path: "cnn_model_1_with_tamil.ckpt"
+all_model_checkpoint_paths: "cnn_model_1_with_tamil.ckpt"
