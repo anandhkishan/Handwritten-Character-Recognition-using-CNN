@@ -28,13 +28,13 @@ def input_emnist(st):
         #Width is bigger. Width becomes 20 pixels.
         nheight = int(round((28.0/width*height),0)) #resize height according to ratio width
         if (nheight == 0): #rare case but minimum is 1 pixel
-            nheight = 1  
+            nheight = 1
         # resize and sharpen
         img = im.resize((28,nheight), Image.ANTIALIAS).filter(ImageFilter.SHARPEN)
         wtop = int(round(((28 - nheight)/2),0)) #caculate horizontal pozition
         newImage.paste(img, (0,wtop)) #paste resized image on white canvas
     else:
-    #Height is bigger. Heigth becomes 20 pixels. 
+    #Height is bigger. Heigth becomes 20 pixels.
         nwidth = int(round((28.0/height*width),0)) #resize width according to ratio height
         if (nwidth == 0): #rare case but minimum is 1 pixel
             nwidth = 1
@@ -56,14 +56,14 @@ def input_emnist(st):
     for i in range(len(tva)):
         if tva[i]<=0.45:
             tva[i]=0.0
-    n_image = np.array(tva)    
+    n_image = np.array(tva)
     rn_image = n_image.reshape(28,28)
     #displaying input image
-    plt.imshow(im_open) 
+    plt.imshow(im_open)
     plt.title("Input Image")
     plt.show()
     #displaying gray-scale image
-    plt.imshow(newImage.convert('LA')) 
+    plt.imshow(newImage.convert('LA'))
     plt.title("Rescaled Image")
     plt.show()
     #displaying normalized image
@@ -201,7 +201,7 @@ def model_predict(n_image):
 
     y_pred = normal_full_layer(full_one_dropout,59)
 
-    #Loss Function 
+    #Loss Function
     cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_true,logits = y_pred))
 
     #optimizer
@@ -228,7 +228,7 @@ def model_predict(n_image):
             rand_ind = np.random.randint(len(train_images),size=batch_size)
             feed = {x:train_images[rand_ind],y_true:train_labels[rand_ind],hold_prob:0.5}
             sess.run(train,feed_dict=feed)
-            
+
             if i%100 == 0:
                 print("On step: {}".format(i))
                 match = tf.equal(tf.argmax(y_pred,1),tf.argmax(y_true,1))
@@ -236,18 +236,18 @@ def model_predict(n_image):
                 print("Accuracy obtained at {x} is {y}".format(x=i,y=sess.run(acc,feed_dict={x:test_images,y_true:test_labels,hold_prob:1.0})))
                 print('\n')
         saver.save(sess,'model/cnn_model.ckpt')
-            
+
     '''
 
 # # Predicting the input image
-	
+
     get_ipython().magic('store -r n_image') #restoring saved input image
 
 
     with tf.Session() as sess:
             sess.run(init)
-            saver.restore(sess, "model/cnn_model_1_with_tamil.ckpt")
-           
+            saver.restore(sess, "model/cnn_model_1_without_tamil.ckpt")
+
             prediction=tf.argmax(y_pred,1)
             var = prediction.eval(feed_dict={x: [n_image],y_true:train_labels,hold_prob: 0.5}, session=sess)
 
@@ -273,7 +273,7 @@ def getVal():
 submit = Button(root, text ="Submit", command = getVal)
 label1.pack()
 E1.pack()
-submit.pack(side =BOTTOM) 
+submit.pack(side =BOTTOM)
 mainloop()
 n_image,image,convo_image = input_emnist(st) #call to Function with name of the file as parameter
 res,cpy = model_predict(n_image)
